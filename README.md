@@ -8,20 +8,22 @@ Usage:
 - you need Unifi original firmware.json file (I was not able to find proper URL of this file at Ubiquity yet). It is reguraly updated by controller from Ubiquity server, so if you have another unifi controller in internet or the cloudkey in the internet, you can find this file in the root directory of the unifi service (typicaly /var/lib/unifi).
 - make proper configuration of the script run in .yml config file (description of the items are inside of the sample config file)
 - run the script
-- expected output:
-* new generated firmware.json file with modified URLs of the firmware files
-* downloaded firmware files into the defined directory
 
-- what next with this?
-: replace new firmware.json file in the unifi controller without internet access
-: restart unifi service
-: since this time unfi controller will start present your new URLs of unifi firmware files to unifi devices
+Expected output:
+- new generated firmware.json file with modified URLs of the firmware files
+- downloaded firmware files into the defined directory
 
-: place downloaded firmware files (whole dedicated directory) at some web server which is accessible from your unifi devices and properly setup the web server to match new modified URLs of firmware files
-: since this time you will be able to upgrade firmwares in your whole unifi infrastructure without internet access
+What next with this?
+- replace new firmware.json file in the unifi controller without internet access
+- restart unifi service
+- since this time unfi controller will start present your new URLs of unifi firmware files to unifi devices
+- place downloaded firmware files (whole dedicated directory) at some web server which is accessible from your unifi devices and properly setup the web server to match new modified URLs of firmware files
+- since this time you will be able to upgrade firmwares in your whole unifi infrastructure without internet access
 
-filtering:
+Filtering:
+
 You don't have to download all firmwares from Ubiquity server defined in firmware.json file. You can configure filters for controller versions and for unifi device models. Filter can be configured in .yml config file. So you can download only firmwares for your owned models which grealy lowers needed storage capacity.
 
-using proxy:
+Using proxy:
+
 For downloading of the firmware files you can configure proxy server in configuration .yml file. The proxy definition is compatible with using proxy in requests python module.
