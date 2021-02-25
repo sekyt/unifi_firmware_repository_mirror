@@ -1,5 +1,5 @@
 Function of this script is to download unifi firmware files from Ubiquity oficial firmware repository to your private one.
-It uses their firmware definition file firmware.json (formerly bundles.json) to get URLs of firmwares, then it transforms those URLs to another ones which could be usable on your private web server and in the end the script downloads all wanted firmwares into your system.
+It uses their firmware definition file firmware.json to get URLs of firmwares, then it transforms those URLs to another ones which could be usable on your private web server and in the end the script downloads all wanted firmwares into your system.
 The motivation for making this tool was the missing proxy setting in Unifi controller software which prevents upgrading of firmwares in networks where isn't direct access to the internet for unifi devices and unifi controller as well.
 
 Usage:
