@@ -1,0 +1,41 @@
+# original firmware.json file from Ubiquity
+source_firmware_json_file: firmware.json-ubnt
+
+# file for transformed firmware.json file for running unifi controller
+destination_firmware_json_file: firmware.json
+
+# transforation of firmware URLs rules
+transformURL:
+  # how to change protocol of the original firmware URL, None = don't change
+  protocol: http
+
+  # how to change server part of the original firware URL, None = don't change
+  server: unifiupgrade.mydomain.com:2380
+
+  # how to change path part of the original firmware URL, None = don't change
+  path:
+
+# directory into which the firware files will be downloaded
+firmware_base_directory: firmware_repo
+
+# definition of proxies - empty if proxy is not needed to use for downloading
+# definition like in https://requests.readthedocs.io/en/master/user/advanced/#proxies
+proxies:
+  # proxy definition for http requests
+  http: http://10.10.10.10:3128
+
+# proxy definition for https requests
+  https: http://10.10.10.10:3128
+
+# set up filtering for firmware download
+filter:
+  # filter firmwares only for this controller version - empty for all versions
+  version:
+    - 6.0.45
+
+  # filter device models to download firmware for - empty for all models
+  model:
+    - BZ2
+    - U2Sv2
+    - U7PG2
+    - U7LR
